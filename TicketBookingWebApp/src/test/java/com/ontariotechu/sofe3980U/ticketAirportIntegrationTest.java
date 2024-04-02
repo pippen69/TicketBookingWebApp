@@ -3,14 +3,12 @@ package com.ontariotechu.sofe3980U;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-
-import java.time.LocalDate;
-
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.Before;
-import org.junit.Test;
 import java.util.*;
 
-public class ticketAirportIntegrationTest {
+public class ticketIntegrationTest {
     private Ticket newTicket;
     private Airport airport1;
     private Airport airport2;
@@ -19,13 +17,14 @@ public class ticketAirportIntegrationTest {
     Airport[] airports;
 
     //The setup, initializes ticket and airport object
-    @Before
+    @BeforeEach
     public void setup() {
         newTicket = new Ticket();
         airport1 = new Airport("JFK");
         airport2 = new Airport("YYZ");
         airport3 = new Airport("LAX");
         airport4 = new Airport("DEN");
+
 
         airports = new Airport[]{ airport1, airport2, airport3, airport4 }; // Initialization here
 
@@ -151,7 +150,5 @@ public class ticketAirportIntegrationTest {
         //Test if flight time is working with the ticket
         assertNotNull(flightTime);
         assertEquals(flightTime, 115);
-
-
     }
 }
