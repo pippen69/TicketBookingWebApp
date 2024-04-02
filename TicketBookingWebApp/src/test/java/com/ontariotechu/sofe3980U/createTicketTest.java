@@ -6,11 +6,17 @@ import java.time.LocalDate;
 import org.junit.Before;
 import org.junit.*;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class createTicketTest {
    
     private Ticket newTicket;
 
-    @Before
+    @BeforeEach
     public void setup() {
         newTicket = new Ticket();
 
@@ -86,22 +92,22 @@ public class createTicketTest {
        assertTrue(ticket.equals("One-Way and Indirect trip"));
     }
 
-    //this test will test if the the user tries to book a flight
-    //to and from the same airport or different airports
-    // @ParameterizedTest
-    // @CsvFileSource(resources = "/AirportRouting.csv")
-    // public void testBookTrip(String airName1, String airName2, String expectedValue){
-       
-    //     //creating the airport objects
-    //     Airport air1 = new Airport(airName1); 
-    //     Airport air2 = new Airport(airName2);
+//     this test will test if the the user tries to book a flight
+//    to and from the same airport or different airports
+    @ParameterizedTest
+    @CsvFileSource(resources = "/AirportRouting.csv")
+    public void testBookTrip(String airName1, String airName2, String expectedValue){
 
-    //     Ticket newTicket = new Ticket();
-    //     String trip = newTicket.bookTrip(air1, air2);
+        //creating the airport objects
+        Airport air1 = new Airport(airName1);
+        Airport air2 = new Airport(airName2);
+
+        Ticket newTicket = new Ticket();
+        String trip = newTicket.bookTrip(air1, air2);
 
 
-    //     assertTrue(trip.equals(expectedValue));
-    // }
+        assertTrue(trip.equals(expectedValue));
+    }
 
     /*
     These are to test the Time Conversion Functionalities.
