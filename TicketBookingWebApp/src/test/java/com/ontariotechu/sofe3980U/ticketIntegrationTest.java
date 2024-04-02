@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.Before;
 import java.util.*;
+import org.junit.*;
+
 
 public class ticketIntegrationTest {
     private Ticket newTicket;
