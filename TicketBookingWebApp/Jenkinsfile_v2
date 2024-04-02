@@ -6,7 +6,7 @@ pipeline {
     CLUSTER_ZONE = credentials("northamerica-northeast1-b") // secret text for the cluster zone. I set it manually in Jenkins credentials
     REPO_PATH= credentials("GitHub_token") // secret text for the repo path. I set it manually in Jenkins credentials
     IMAGE_TAG = "$REPO_PATH/${APP_NAME}"
-    SERVICE_ACCOUNT= credentials('serive_account')    // secret file for the GCP credential JSON file. I set it manually in Jenkins credentials
+    SERVICE_ACCOUNT= credentials('6b6060f3-6500-4210-bcc2-281cf9b2eadb')    // secret file for the GCP credential JSON file. I set it manually in Jenkins credentials
   }
     agent{   // create a node under the name gcloud that running google/cloud-sdk:latest docker image 
         kubernetes {
