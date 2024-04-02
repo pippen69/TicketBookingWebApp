@@ -1,0 +1,16 @@
+JFK,JFK,invalid
+JFK,YYZ,valid
+JFK,LAX,valid
+JFK,DEN,valid
+YYZ,YYZ,invalid
+YYZ,LAX,valid
+YYZ,DEN,valid
+YYZ,JFK,valid
+DEN,DEN,invalid
+DEN,YYZ,valid
+DEN,LAX,valid
+DEN,JFK,valid
+LAX,LAX,invalid
+LAX,YYZ,valid
+LAX,JFK,valid
+LAX,DEN,valid
