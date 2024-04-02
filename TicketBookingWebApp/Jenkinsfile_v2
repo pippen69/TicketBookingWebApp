@@ -50,18 +50,18 @@ spec:
     }
     //stage ('test') {
     //  steps {
-    //    sh 'mvn clean test -f ./BinaryCalculatorWebapp/pom.xml'
+    //    sh 'mvn clean test -f ./TicketBookingWebApp/pom.xml'
     //  }
     //}
     stage ('build') {
       steps {
-        sh 'mvn package -DskipTests -f ./BinaryCalculatorWebapp/pom.xml'
+        sh 'mvn package -DskipTests -f ./TicketBookingWebApp/pom.xml'
       }
     }
     stage('Build and push image with Container Builder') {
       steps {
         container('gcloud') {
-          sh "/builder/google-cloud-sdk/bin/gcloud builds submit -t ${IMAGE_TAG} ./BinaryCalculatorWebapp/"
+          sh "/builder/google-cloud-sdk/bin/gcloud builds submit -t ${IMAGE_TAG} ./TicketBookingWebApp/"
         }
       }
     }
